@@ -32,9 +32,9 @@
   .osint-tag{display:inline-flex;align-items:center;gap:7px;margin-top:16px;border:1px solid rgba(183,146,74,.72);background:rgba(0,0,0,.72);padding:4px 11px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:#e2bd77;}
   .osint-tag::before{content:'◆';font-size:7px;}
   .pmesii-nav{position:sticky;top:0;z-index:200;background:var(--paper-dk);border-bottom:1px solid var(--border);}
-  .nav-inner{max-width:860px;margin:0 auto;padding:0 32px;display:flex;overflow-x:auto;scrollbar-width:none;}
+  .nav-inner{width:min(100%,1180px);margin:0 auto;padding:0 24px;display:flex;justify-content:center;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
   .nav-inner::-webkit-scrollbar{display:none;}
-  .nav-link{display:flex;align-items:center;gap:6px;padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:0.13em;text-transform:uppercase;text-decoration:none;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap;flex-shrink:0;transition:color .2s,border-color .2s;}
+  .nav-link{display:flex;align-items:center;gap:6px;padding:10px 11px;font-family:'IBM Plex Mono',monospace;font-size:9.2px;letter-spacing:0.10em;text-transform:uppercase;text-decoration:none;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap;flex-shrink:0;transition:color .2s,border-color .2s;}
   .nav-link .pip{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
   .nav-link[data-d="sum"]:hover,.nav-link[data-d="sum"].on{color:var(--gold);border-color:var(--gold);}
   .nav-link[data-d="p"]:hover,.nav-link[data-d="p"].on{color:var(--p);border-color:var(--p);}
@@ -80,7 +80,9 @@
   .footer-note{font-size:10.5px;color:rgba(245,240,232,.55);}
   .footer-note a{color:var(--gold-lt);text-decoration:none;}
   .footer-disc{max-width:860px;margin:0 auto;padding:8px 32px 24px;font-size:10px;color:rgba(245,240,232,.4);line-height:1.6;}
-  @media(max-width:700px){.sum-grid{grid-template-columns:1fr;}.hero-inner{grid-template-columns:1fr;}.dom-head{grid-template-columns:1fr;padding:20px 22px;}.dom-letter{display:none;}.card-grid{grid-template-columns:1fr;}}
+  @media(min-width:1180px){.nav-link{padding:11px 14px;font-size:9.5px;letter-spacing:0.12em;}}
+  @media(max-width:900px){.nav-inner{justify-content:flex-start;padding:0 18px;}.nav-link{padding:10px 10px;font-size:8.8px;letter-spacing:0.08em;}}
+  @media(max-width:700px){.sum-grid{grid-template-columns:1fr;}.hero-inner{grid-template-columns:1fr;}.dom-head{grid-template-columns:1fr;padding:20px 22px;}.dom-letter{display:none;}.card-grid{grid-template-columns:1fr;}.nav-inner{padding:0 14px;}.nav-link{font-size:8.4px;gap:5px;}}
 </style>
 </head>
 <body>
@@ -382,7 +384,7 @@
   const _o=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const i=_s.indexOf(e.target.id);_l.forEach(l=>l.classList.remove('on'));if(i>=0&&_l[i])_l[i].classList.add('on');}});},{rootMargin:'-15% 0px -65% 0px'});
   _s.forEach(id=>{const el=document.getElementById(id);if(el)_o.observe(el);});
   document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});});
-  document.getElementById('btn-html').addEventListener('click',function(){try{const c=document.documentElement.cloneNode(true);c.querySelectorAll('script').forEach(s=>s.remove());const h='<!DOCTYPE html>\n'+c.outerHTML;const b=new Blob([h],{type:'text/html;charset=utf-8'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='svensk-osint-brief-2026-06-12-utan-analys.html';document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(()=>URL.revokeObjectURL(u),3000);}catch(e){const c2=document.documentElement.cloneNode(true);c2.querySelectorAll('script').forEach(s=>s.remove());const h2='<!DOCTYPE html>\n'+c2.outerHTML;const a2=document.createElement('a');a2.href='data:text/html;charset=utf-8,'+encodeURIComponent(h2);a2.download='svensk-osint-brief-2026-06-12-utan-analys.html';document.body.appendChild(a2);a2.click();document.body.removeChild(a2);}});
+  document.getElementById('btn-html').addEventListener('click',function(){try{const c=document.documentElement.cloneNode(true);c.querySelectorAll('script').forEach(s=>s.remove());const h='<!DOCTYPE html>\n'+c.outerHTML;const b=new Blob([h],{type:'text/html;charset=utf-8'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='svensk-osint-brief-2026-06-12-utan-analys-bred-meny.html';document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(()=>URL.revokeObjectURL(u),3000);}catch(e){const c2=document.documentElement.cloneNode(true);c2.querySelectorAll('script').forEach(s=>s.remove());const h2='<!DOCTYPE html>\n'+c2.outerHTML;const a2=document.createElement('a');a2.href='data:text/html;charset=utf-8,'+encodeURIComponent(h2);a2.download='svensk-osint-brief-2026-06-12-utan-analys-bred-meny.html';document.body.appendChild(a2);a2.click();document.body.removeChild(a2);}});
 </script>
 </body>
 </html>
